@@ -1,0 +1,13 @@
+  <ion-card>
+    <img alt="Silhouette of mountains" src="https://www.duoc.cl/wp-content/uploads/2020/06/Puente-alto.jpg" />
+    <ion-card-header *ngIf="mostrarHeader">
+      <ion-card-title> {{ nombre }} </ion-card-title> 
+      <ion-card-subtitle> {{ siglas }} </ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+       
+    </ion-card-content>
+    <ion-button *ngIf="mostrarBoton"  [routerLink]="['/asignaturas']" fill="outline" color="warning" shape="round">ver asignaturas</ion-button>
+  </ion-card>
+

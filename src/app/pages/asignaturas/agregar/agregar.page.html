@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/asignaturas"></ion-back-button>
+    </ion-buttons>
+    <ion-title>agregar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-input #nombre type="text" label="Nombre" labelPlacement="floating" placeholder="Ej: Matematica"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input #siglas type="text" label="Siglas" labelPlacement="floating" placeholder="Ej: MAT2131"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input #seccion type="text" label="Seccion" labelPlacement="floating" placeholder="Ej: 001D/001V"></ion-input>
+      </ion-item>
+      <ion-button color="warning" (click)="addAsignatura(nombre,siglas,seccion)">agregar asignatura</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

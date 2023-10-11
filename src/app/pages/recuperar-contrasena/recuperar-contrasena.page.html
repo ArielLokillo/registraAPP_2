@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container">
+    <label class="labelRegistrarse"> Ingrese su nombre de usuario</label>
+    <ion-card-content>
+      <img alt="Silhouette of mountains" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzuRREmHV3mhpMW8lua5qMFduYNhwgCKy7HLhr-_L1mK7Qry2EK6mOuAtDADENTfFgYf8&usqp=CAU" />
+      <ion-item>
+        <ion-input type="email" errorText="correo invalido"
+        ngModel
+        email label="Usuario" labelPlacement="floating" placeholder="Ej: Arielsillo"></ion-input>
+
+      </ion-item>
+    </ion-card-content>
+    <ion-button [routerLink]="['/login']" expand="full" fill="outline" color="success" shape="round">recuperar </ion-button>
+
+  </div>
+
+</ion-content>

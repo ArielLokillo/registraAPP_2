@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-input type="email" errorText="correo invalido"
+    ngModel
+    email label="Correo" labelPlacement="floating" placeholder="Ej: duoc@duoc.cl"></ion-input>
+
+  </ion-item>
+  <ion-item>
+    <ion-input type="user" label="Nombre usuario" labelPlacement="floating" placeholder="Ej: alumnoDuoc"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="password" label="contraseña" labelPlacement="floating" placeholder="Ej: 1234"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" fill="outline" color="warning" (click)="volver_login()">Registrarse</ion-button>
+</ion-content>

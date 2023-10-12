@@ -18,7 +18,7 @@
 
   <ion-list>
     <ion-reorder-group [disabled]="false" (ionItemReorder)="handleReorder($any($event))">
-    <ion-item *ngFor="let aux of listaAsignaturas" [routerLink]="['/asignaturas/, aux.id']">
+    <ion-item *ngFor="let aux of listaAsignaturas" [routerLink]="['/asignaturas/', aux.id]">
       <ion-label>{{ aux.nombre }}</ion-label>
       <ion-reorder slot="end"></ion-reorder>
     </ion-item>

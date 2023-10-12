@@ -13,7 +13,8 @@ export class AsignaturasPage implements OnInit {
   listaAsignaturas: Asignatura[] = [];
   buscador: Asignatura[] = [];
 
-  constructor(private router: Router,private asignaturasService: AsignaturasService) { }
+  constructor(private router: Router,
+              private asignaturasService: AsignaturasService) { }
 
   //METODO QUE SE EJECUTA CUANDO SE CREA LA PAGINA
   ngOnInit() {

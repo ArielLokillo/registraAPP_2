@@ -8,9 +8,6 @@ import { Router } from '@angular/router';
 })
 export class LoginDocentePage implements OnInit {
 
-  userDocente!: string;
-  passDocente!: string;
-
   constructor(private router: Router) { }
 
   ngOnInit() {

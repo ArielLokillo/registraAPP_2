@@ -49,7 +49,7 @@ const routes: Routes = [
       {
         path: ':id',
         loadChildren: () => import('./pages/asignaturas/detalle/detalle.module').then( m => m.DetallePageModule)
-      },
+      }
     ]
   },
   {

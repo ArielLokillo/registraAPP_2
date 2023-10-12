@@ -75,7 +75,7 @@ export class AsignaturasService {
   ]
   constructor() { }
 
-  //METODOS CUSTOM
+   //METODOS CUSTOM
 
   //METODO QUE DEVUELVE EL OBJETO COMPLETO
   getAll() {
@@ -85,7 +85,7 @@ export class AsignaturasService {
   //METODO QUE DEVUELVE LA ASIGNATURA POR EL ID BUSCADO
   getAsignatura(id: string) {
     return {
-      ...this.asignaturas.find( aux => {
+      ...this.asignaturas.find(aux => {
         return aux.id === id
       })
     }

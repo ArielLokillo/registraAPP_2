@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-terminos-y-condiciones',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TerminosYCondicionesPage implements OnInit {
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
+  }
+
+  navigateToTerms() {
+    this.navCtrl.navigateForward('terminos-y-condiciones');
   }
 
 }

@@ -12,7 +12,7 @@ export class CargandoPage implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
-      this.router.navigate(['inicio']);
+      this.router.navigate(['terminos-y-condiciones']);
     },2000);
   }
 

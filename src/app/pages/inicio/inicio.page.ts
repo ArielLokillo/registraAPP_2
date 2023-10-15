@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-inicio',
@@ -8,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class InicioPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private navCtrl: NavController) { }
 
   ngOnInit() {
   }
@@ -21,4 +23,7 @@ export class InicioPage implements OnInit {
     this.router.navigate(['login'])
   }
 
+  navigateToTerms() {
+    this.navCtrl.navigateForward('terminos-y-condiciones');
+  }
 }

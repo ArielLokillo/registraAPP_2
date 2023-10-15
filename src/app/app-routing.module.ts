@@ -84,6 +84,10 @@ const routes: Routes = [
     path: 'terminos-y-condiciones',
     loadChildren: () => import('./pages/terminos-y-condiciones/terminos-y-condiciones.module').then( m => m.TerminosYCondicionesPageModule)
   },
+  {
+    path: 'detalle-alumno',
+    loadChildren: () => import('./pages/asignaturas-alumno/detalle-alumno/detalle-alumno.module').then( m => m.DetalleAlumnoPageModule)
+  },
 ];
 
 @NgModule({

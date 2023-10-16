@@ -5,11 +5,106 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-content>
-      <!-- Agrega aquí el texto de tus términos y condiciones -->
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Recusandae deserunt aperiam inventore a eaque ducimus rem blanditiis, delectus natus iure officiis tenetur repellat sequi facere similique unde architecto iusto voluptate?
-    </ion-card-content>
-  </ion-card>
+<h6>
+  Términos y Condiciones de Uso de la Aplicación de Registro de Asistencias registraAPP
+</h6>
+
+<h6>
+  Fecha de entrada en vigencia: 00/00/0000.
+</h6>
+
+<h6>
+  Estos términos y condiciones ("Términos") rigen el uso de la aplicación de registro de 
+  asistencias académicas ("RegistraAPP") proporcionada por Ariel Saavedra, Sebastián Henriquez, Gabriel Pitron.
+</h6>
+
+<h3>
+  1. Registro y Cuentas de Usuario
+</h3>
+
+<h4>
+  Usted debe crear una cuenta para utilizar la Aplicación. La información de registro debe ser precisa y actualizada.
+  Es su responsabilidad mantener la seguridad de su cuenta y contraseña. Usted es responsable de todas las actividades realizadas a través de su cuenta.
+</h4>
+
+<h3>
+  2. Uso de la Aplicación
+</h3>
+
+<h4>
+  La Aplicación se proporciona para el registro de asistencias de DUOC UC y la gestión de 
+  eventos relacionados con la educación. Usted acepta utilizar la Aplicación de manera ética y legal.
+</h4>
+
+<h3>
+  3. Privacidad y Datos Personales
+</h3>
+
+<h4>
+  Respetamos su privacidad. Nuestra Política de Privacidad describe cómo recopilamos, utilizamos
+  y protegemos sus datos personales. Al utilizar la Aplicación, usted acepta nuestras prácticas de privacidad.
+</h4>
+
+<h3>
+  4. Propiedad Intelectual
+</h3>
+
+<h4>
+  Todos los derechos de propiedad intelectual relacionados con la Aplicación y su contenido
+  son propiedad de Ariel Saavedra, Sebastián Henriquez, Gabriel Pitron o sus licenciantes.
+</h4>
+
+<h3>
+  5. Modificaciones de los Términos
+</h3>
+
+<h4>
+  Nos reservamos el derecho de modificar estos Términos en cualquier momento.
+  Las modificaciones serán efectivas al publicar los Términos actualizados en la Aplicación.
+</h4>
+
+<h3>
+  6. Finalización del Acceso
+</h3>
+
+<h4>
+  Podemos finalizar su acceso a la Aplicación si incumple estos Términos. Usted puede cancelar su cuenta en cualquier momento.
+</h4>
+
+<h3>
+  7. Limitación de Responsabilidad
+</h3>
+
+<h4>
+  La Aplicación se proporciona "tal cual" y "según disponibilidad". No ofrecemos garantías de ningún tipo.
+  No seremos responsables de ningún daño directo, indirecto, incidental, especial o consecuente que resulte del uso o la imposibilidad de usar la Aplicación.
+</h4>
+
+<h3>
+  8. Legislación Aplicable
+</h3>
+
+<h4>
+  Estos Términos se rigen por las leyes del País  y cualquier disputa se resolverá en los tribunales de Puente Alto.
+  Al utilizar la Aplicación, usted acepta cumplir con estos Términos. Si tiene alguna pregunta o inquietud, no dude en ponerse en contacto con nosotros en [dirección de correo electrónico de soporte].
+</h4>
+
+<h6>
+  Estos Términos se rigen por las leyes del País  y cualquier disputa se resolverá en los tribunales de Puente Alto.
+  Al utilizar la Aplicación, usted acepta cumplir con estos Términos. Si tiene alguna pregunta o inquietud, no dude en 
+  ponerse en contacto con nosotros en [dirección de correo electrónico de soporte].
+</h6>
+
+<h6>
+  Estos Términos y Condiciones constituyen el acuerdo completo entre usted y Ariel Saavedra, Sebastián Henriquez, Gabriel Pitron con respecto al uso de la Aplicación.
+</h6>
+
+<h6>
+  Fecha de última actualización: 00/00/0000
+</h6>
+
+  <ion-checkbox [(ngModel)]="aceptoTerminos">Acepto los términos y condiciones</ion-checkbox>
+  <ion-button expand="full" [disabled]="!aceptoTerminos" [routerLink]="['/inicio']" fill="outline" color="warning" shape="round" (click)="cerrar()">Cerrar</ion-button>
+
 </ion-content>
+

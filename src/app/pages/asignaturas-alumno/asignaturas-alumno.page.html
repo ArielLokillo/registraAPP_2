@@ -5,7 +5,7 @@
     </ion-buttons>
     <ion-title>asignaturas-alumno</ion-title>
     <ion-buttons slot="end">
-      <ion-icon name="refresh" (click)="listar()"></ion-icon>
+      <ion-icon name="refresh" (click)="listarAlumno()"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -18,23 +18,13 @@
 
   <ion-list>
     <ion-reorder-group [disabled]="false" (ionItemReorder)="handleReorder($any($event))">
-    <ion-item *ngFor="let aux of listaAsignaturas" [routerLink]="['/asignaturas-alumno/', aux.id]">
+    <ion-item *ngFor="let aux of listaAsignaturasAlumno" [routerLink]="['/asignaturas-alumno/', aux.id]">
       <ion-label>{{ aux.nombre }}</ion-label>
       <ion-reorder slot="end"></ion-reorder>
     </ion-item>
   </ion-reorder-group>
   </ion-list>
 
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-    <ion-fab-button>
-      <ion-icon name="chevron-up-circle"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-list side="top">
-      <ion-fab-button>
-        <ion-icon (click)="addAsignatura()" name="add"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
   
 </ion-content>
 

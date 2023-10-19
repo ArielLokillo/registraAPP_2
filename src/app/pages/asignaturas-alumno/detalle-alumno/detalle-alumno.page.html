@@ -1,13 +1,26 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/asignaturas-alumno"></ion-back-button>
+    </ion-buttons>
     <ion-title>detalle-alumno</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">detalle-alumno</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card>
+    
+    <ion-card-header>
+      <ion-card-title>{{ asignaturaAlumno.nombre }} </ion-card-title>
+      <ion-card-subtitle>{{ asignaturaAlumno.siglas }}</ion-card-subtitle>
+      <ion-card-subtitle>{{ asignaturaAlumno.seccion }}</ion-card-subtitle>
+      <ion-card-subtitle>{{ asignaturaAlumno.docente }}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{ asignaturaAlumno.horarioAlumno }}
+    </ion-card-content>
+    <ion-button [routerLink]="['/asistencia-alumno']"  fill="outline" color="warning" shape="round">ver asistencias</ion-button>
+    <ion-button [routerLink]="['/camara']" fill="outline" color="warning" shape="round">Escanear código QR</ion-button>
+  </ion-card>
 </ion-content>

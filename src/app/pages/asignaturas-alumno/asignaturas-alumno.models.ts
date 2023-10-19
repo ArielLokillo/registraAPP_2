@@ -1,8 +1,8 @@
-export interface Asignaturas_Alumno {
+export interface AsignaturasAlumno {
     id?: string;
     nombre?: string;
     siglas?: string;
     seccion?: string;
     docente?: string;
-    horario?: string;
+    horarioAlumno?: string;
 }   

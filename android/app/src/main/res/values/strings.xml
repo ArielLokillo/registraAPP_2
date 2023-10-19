@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">registraAPP</string>
+    <string name="title_activity_main">registraAPP</string>
+    <string name="package_name">cl.duoc.registraapp</string>
+    <string name="custom_url_scheme">cl.duoc.registraapp</string>
+</resources>

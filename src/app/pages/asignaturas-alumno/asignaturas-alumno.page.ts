@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Asignaturas_Alumno } from './asignaturas-alumno.models';
+import { AsignaturasAlumno } from './asignaturas-alumno.models';
 import { Router } from '@angular/router';
 import { AsignaturasAlumnoService } from 'src/app/services/asignaturas-alumno.service';
 
@@ -9,15 +9,16 @@ import { AsignaturasAlumnoService } from 'src/app/services/asignaturas-alumno.se
   styleUrls: ['./asignaturas-alumno.page.scss'],
 })
 export class AsignaturasAlumnoPage implements OnInit {
-  listaAsignaturas: Asignaturas_Alumno[] = [];
-  buscador: Asignaturas_Alumno[] = [];
+  
+  listaAsignaturasAlumno: AsignaturasAlumno[] = [];
+  buscador: AsignaturasAlumno[] = [];
 
   constructor(private router: Router,
-              private asignaturasService: AsignaturasAlumnoService) { }
+              private asignaturasAlumnoService: AsignaturasAlumnoService) { }
 
   //METODO QUE SE EJECUTA CUANDO SE CREA LA PAGINA
   ngOnInit() {
-    this.listaAsignaturas = this.asignaturasService.getAll()
+    this.listaAsignaturasAlumno = this.asignaturasAlumnoService.getAll()
   }
 
   //METODO QUE SE EJECUTA CUANDO UNO VUELVE A LA PAGINA
@@ -25,17 +26,17 @@ export class AsignaturasAlumnoPage implements OnInit {
     //this.listaAsignaturas = this.asignaturasService.getAll()
   }
 
-  listar() {
-    this.listaAsignaturas = this.asignaturasService.getAll()
+  listarAlumno() {
+    this.listaAsignaturasAlumno = this.asignaturasAlumnoService.getAll()
   }
 
-  addAsignatura() {
-    this.router.navigate(['/agregar']);
-  }
+  //addAsignatura() {
+    //this.router.navigate(['/agregar']);
+  //}
 
   handleRefresh(event: any) {
     setTimeout(() => {
-      this.listar();
+      this.listarAlumno();
       event.target.complete();
     }, 2000);
   }
@@ -48,7 +49,7 @@ export class AsignaturasAlumnoPage implements OnInit {
   buscarAsignatura(event: any){
     const texto = event.target.value;
     if( texto && texto.trim() != '' ){
-      this.listaAsignaturas = this.listaAsignaturas.filter((aux: any) => {
+      this.listaAsignaturasAlumno = this.listaAsignaturasAlumno.filter((aux: any) => {
         //BUSQUE TODOS LOS POSIBLES RESULTADOSEN MANUS Y EN MINUS
         return (aux.nombre.toLowerCase().indexOf(texto.toLowerCase()) >- 1);
       })

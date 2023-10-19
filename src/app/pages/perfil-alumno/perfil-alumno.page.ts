@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilAlumnoPage implements OnInit {
 
-  constructor() { }
+  usuarios: any[] = [];
+  avatares: any[] = [];
+
+  constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
+    this.httpClient.get<any>("https://randomuser.me/api/?results=20").subscribe(resultado => {
+      this.usuarios = resultado.results;
+      console.log(this.usuarios)
+    });
+
   }
+
+  //https://rickandmortyapi.com/api/character
 
 }

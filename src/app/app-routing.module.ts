@@ -74,7 +74,16 @@ const routes: Routes = [
   },
   {
     path: 'asignaturas-alumno',
-    loadChildren: () => import('./pages/asignaturas-alumno/asignaturas-alumno.module').then( m => m.AsignaturasAlumnoPageModule)
+    children: [
+      {
+        path: "",
+        loadChildren: () => import('./pages/asignaturas-alumno/asignaturas-alumno.module').then( m => m.AsignaturasAlumnoPageModule)
+      },
+      {
+        path: ':id',
+        loadChildren: () => import('./pages/asignaturas-alumno/detalle-alumno/detalle-alumno.module').then( m => m.DetalleAlumnoPageModule)
+      }
+    ]
   },
   {
     path: 'asistencia-docente',
@@ -87,6 +96,14 @@ const routes: Routes = [
   {
     path: 'detalle-alumno',
     loadChildren: () => import('./pages/asignaturas-alumno/detalle-alumno/detalle-alumno.module').then( m => m.DetalleAlumnoPageModule)
+  },
+  {
+    path: 'camara',
+    loadChildren: () => import('./pages/camara/camara.module').then( m => m.CamaraPageModule)
+  },
+  {
+    path: 'detallecard',
+    loadChildren: () => import('./pages/detallecard/detallecard.module').then( m => m.DetallecardPageModule)
   },
 ];
 

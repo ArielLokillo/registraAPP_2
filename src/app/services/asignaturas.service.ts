@@ -38,7 +38,7 @@ export class AsignaturasService {
       siglas: 'ASY4131',
       seccion: '009D',
       docente: 'Jeanette Leonelli',
-      horario: '',
+      horario: 'lunes 10:41 a 12:10 - miercoles 10:01 a 11:20',
     },
     {
       id: '5',
@@ -46,7 +46,7 @@ export class AsignaturasService {
       siglas: 'CSY4111',
       seccion: '008D',
       docente: 'Julio Tapia',
-      horario: '',
+      horario: 'martes 12:11 a 13:40 - jueves 11:31 a 12:50',
     },
     {
       id: '6',
@@ -54,7 +54,7 @@ export class AsignaturasService {
       siglas: 'MAT4140',
       seccion: '008D',
       docente: 'Patricio García',
-      horario: '',
+      horario: 'lunes 13:01 a 14:20 jueves 13:01 a 14:20',
     },
     {
       id: '7',
@@ -62,7 +62,7 @@ export class AsignaturasService {
       siglas: 'PFC010',
       seccion: '019D',
       docente: 'Eugenio paredes',
-      horario: '',
+      horario: 'lunes 8:31 a 9:50',
     },
     {
       id: '8',
@@ -70,7 +70,7 @@ export class AsignaturasService {
       siglas: 'EAY4450',
       seccion: '006D',
       docente: 'Paula Vera',
-      horario: '',
+      horario: 'martes 14:31 a 15:50',
     },
   ]
   constructor() { }

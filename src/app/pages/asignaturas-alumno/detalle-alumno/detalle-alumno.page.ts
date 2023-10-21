@@ -5,6 +5,7 @@ import { AlertController, ToastController } from '@ionic/angular';
 import { AsignaturasAlumnoService } from 'src/app/services/asignaturas-alumno.service';
 
 
+
 @Component({
   selector: 'app-detalle-alumno',
   templateUrl: './detalle-alumno.page.html',
@@ -18,7 +19,8 @@ export class DetalleAlumnoPage implements OnInit {
               private toastController: ToastController,
               private alertController: AlertController,
               private asignaturaAlumnoService: AsignaturasAlumnoService,
-              private activatedRoute: ActivatedRoute,) { }
+              private activatedRoute: ActivatedRoute,
+              ) { }
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(param => {
@@ -69,5 +71,4 @@ export class DetalleAlumnoPage implements OnInit {
     //let resultado = await alerta.onDidDismiss();
   //}
 
-  
 }

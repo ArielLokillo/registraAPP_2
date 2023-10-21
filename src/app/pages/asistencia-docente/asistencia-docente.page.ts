@@ -1,14 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
-import { Camera, CameraResultType } from '@capacitor/camera';
-
-const takePicture = async () => {
-  const image = await Camera.getPhoto({
-    quality: 90,
-    allowEditing: true,
-    resultType: CameraResultType.Uri
-  })};
 
 @Component({
   selector: 'app-asistencia-docente',
@@ -19,9 +11,15 @@ const takePicture = async () => {
 
 export class AsistenciaDocentePage implements OnInit {
 
+  usuarios: any[] = [];
+
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
+    this.httpClient.get<any>("https://randomuser.me/api/?results=20").subscribe(resultado => {
+      this.usuarios = resultado.results;
+      console.log(this.usuarios)
+    });
   }
 
 }

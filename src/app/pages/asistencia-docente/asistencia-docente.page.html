@@ -1,18 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home"></ion-back-button>
+      <ion-back-button defaultHref="/asignaturas"></ion-back-button>
     </ion-buttons>
     <ion-title>asistencia-docente</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">asistencia-docente</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <h4>Lista Alumnos</h4>
+  <ion-list *ngFor="let aux of usuarios" >
+    <ion-item>
+      <ion-card *ngIf="usuarios">
+        <img src="{{aux.picture.thumbnail}}" alt="">
+        <ion-card-header>
+          <ion-card-title> {{aux.name.first}} </ion-card-title>
+          <ion-card-title> {{aux.name.last}} </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-chip>
+            
+          </ion-chip>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
 </ion-content>
 
 <!-- <ion-content>

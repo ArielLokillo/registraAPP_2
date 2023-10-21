@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
   templateUrl: './qr.page.html',
   styleUrls: ['./qr.page.scss'],
 })
+
 export class QrPage implements OnInit {
 
   constructor(

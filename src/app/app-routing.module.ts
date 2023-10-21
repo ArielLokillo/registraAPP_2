@@ -98,10 +98,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/asignaturas-alumno/detalle-alumno/detalle-alumno.module').then( m => m.DetalleAlumnoPageModule)
   },
   {
-    path: 'camara',
-    loadChildren: () => import('./pages/camara/camara.module').then( m => m.CamaraPageModule)
-  },
-  {
     path: 'detallecard/id',
     loadChildren: () => import('./pages/detallecard/detallecard.module').then( m => m.DetallecardPageModule)
   },

@@ -12,8 +12,8 @@ export class AppComponent {
     { title: 'Inicio', url: 'home', icon: 'home' },
     { title: 'Perfil Alumno', url: 'perfil-alumno', icon: 'person' },
     { title: 'Perfil Docente', url: 'perfil-docente', icon: 'person' },
+    { title: 'Api', url: 'apihome', icon: 'home' },
     { title: 'Cerrar sesión', url: 'inicio', icon: 'log-out' },
-    { title: 'detalle card', url: 'detallecard', icon: 'card' },
   ];
 
   public appApi = [
@@ -33,8 +33,9 @@ export class AppComponent {
     ) {}
 
   mostrarMenu() {
-    return this.router.url !== '/login','/login-alumno'; //NO SE VA A MOSTRAR EN EL LOGIN
+    return this.router.url !== '/inicio-alumno'; //NO SE VA A MOSTRAR EN EL LOGIN
   }
+
 
   mostrarMenuApi(){
     const aux = ['apihome','apiadd','apilist','apidelete','apiupdate','apidetail']

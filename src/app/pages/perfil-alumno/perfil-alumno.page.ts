@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-perfil-alumno',
   templateUrl: './perfil-alumno.page.html',
@@ -35,7 +37,7 @@ export class PerfilAlumnoPage implements OnInit {
     });
 
     
-    //this.mensaje();
+    this.mensaje();
   }
   
   cargarMasData() {
@@ -44,7 +46,7 @@ export class PerfilAlumnoPage implements OnInit {
     this.httpClient.get<any>(url).subscribe(resultado => {
       this.digimones = this.digimones.concat(resultado.content);
     });
-    //this.mensajeToast('Carga exitosa!');
+    this.mensajeToast('Carga exitosa!');
   }
 
   cargarSiguientePagina() {
@@ -57,7 +59,33 @@ export class PerfilAlumnoPage implements OnInit {
     this.cargarData();
   }
 
+  mensajeToast(mensaje: String){
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'bottom-end',
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
+    Toast.fire({
+      icon: 'success',
+      title: mensaje
+    })
+  }
   
+  mensaje(){
+    Swal.fire({
+      icon: 'success',
+      title: 'Cargado!',
+      text: 'Correctamente',
+      heightAuto: false,
+    })
+  }
   //https://rickandmortyapi.com/api/character
 
 }

@@ -102,8 +102,32 @@ const routes: Routes = [
     loadChildren: () => import('./pages/camara/camara.module').then( m => m.CamaraPageModule)
   },
   {
-    path: 'detallecard',
+    path: 'detallecard/id',
     loadChildren: () => import('./pages/detallecard/detallecard.module').then( m => m.DetallecardPageModule)
+  },
+  {
+    path: 'apiadd',
+    loadChildren: () => import('./pages/api/add/add.module').then( m => m.AddPageModule)
+  },
+  {
+    path: 'apidelete/:id',
+    loadChildren: () => import('./pages/api/delete/delete.module').then( m => m.DeletePageModule)
+  },
+  {
+    path: 'apidetail/:id',
+    loadChildren: () => import('./pages/api/detail/detail.module').then( m => m.DetailPageModule)
+  },
+  {
+    path: 'apihome',
+    loadChildren: () => import('./pages/api/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'apilist',
+    loadChildren: () => import('./pages/api/list/list.module').then( m => m.ListPageModule)
+  },
+  {
+    path: 'apiupdate/:id',
+    loadChildren: () => import('./pages/api/update/update.module').then( m => m.UpdatePageModule)
   },
 ];
 

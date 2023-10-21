@@ -21,9 +21,9 @@ export class CamaraPage implements OnInit {
       mediaType: this.camera.MediaType.PICTURE // Tipo de media (foto en este caso)
     };
 
-    this.camera.getPicture(options).then((imageData) => {
+    this.camera.getPicture(options).then((imageData: any) => {
       // Aquí puedes hacer lo que quieras con la imagen. Por ejemplo, mostrarla en una vista previa.
-    }, (err) => {
+    }, (err: string) => {
       console.log("Error al tomar la foto: " + err);
     });
   }

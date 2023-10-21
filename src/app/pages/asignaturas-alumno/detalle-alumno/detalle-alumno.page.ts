@@ -69,4 +69,5 @@ export class DetalleAlumnoPage implements OnInit {
     //let resultado = await alerta.onDidDismiss();
   //}
 
+  
 }

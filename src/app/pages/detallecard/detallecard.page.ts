@@ -9,6 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetallecardPage implements OnInit {
 
+  digimon: any;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private httpClient: HttpClient
@@ -16,9 +18,9 @@ export class DetallecardPage implements OnInit {
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.paramMap.get("id");
-    this.httpClient.get<any>("https://randomuser.me/api/results").subscribe(resultado => {
-    console.log(resultado)
+    this.httpClient.get<any>("https://digimon-api.com/api/v1/digimon/"+id).subscribe(resultado => {
+    //console.log(resultado)
+    this.digimon = resultado;
     })
   }
-
 }

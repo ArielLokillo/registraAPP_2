@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from '../../usuarios/usuarios.models';
+import { Router } from '@angular/router';
+import { UsuariosService } from 'src/app/services/api/usuarios.service';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPage implements OnInit {
 
-  constructor() { }
+  listaUsuario:any = [];
 
+  constructor(
+    private router: Router,
+    private usuariosApi: UsuariosService
+    
+    ) { }
+  
   ngOnInit() {
+    this.usuariosApi.listUsuarios().subscribe((resp) => {
+      //console.log(resp)
+      this.listaUsuario = resp
+      console.log(this.listaUsuario)
+    })
   }
 
+  listar() {
+    this.usuariosApi.listUsuarios().subscribe((resp) => {
+      //console.log(resp)
+      let aux = JSON.stringify(resp)
+      this.listaUsuario = JSON.parse(aux)
+      console.log(this.listaUsuario)
+    })
+  }
+
+  addUsuario() {
+    this.router.navigate(['/apiadd']);
+  }
 }

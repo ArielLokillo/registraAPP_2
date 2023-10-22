@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/usuarios"></ion-back-button>
+    </ion-buttons>
+    <ion-title>agregar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-input #Usuario type="text" label="Usuario" labelPlacement="floating" placeholder="Ej: Mateo Silva"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input #password type="text" label="Password" labelPlacement="floating" placeholder="Ej: holaduoc1234"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input #correo type="text" label="Correo" labelPlacement="floating" placeholder="Ej: mat.silv@duocuc.cl"></ion-input>
+      </ion-item>
+      <ion-button color="warning" (click)="addUsuario(Usuario,password,correo)">agregar usuario</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

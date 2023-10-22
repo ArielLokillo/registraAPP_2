@@ -1,13 +1,23 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/apilist"></ion-back-button>
+    </ion-buttons>
     <ion-title>detail</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">detail</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <img alt="" src="" />
+    <ion-card-header>
+      <ion-card-title> {{ usuario.nombre }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{ usuario.correo }}
+    </ion-card-content>
+  </ion-card>
+  <ion-button color="primary" fill="outline" [routerLink]="['/apiupdate', usuario.id]">Actualizar</ion-button>
+  <ion-button color="danger" fill="outline" (click)="deleteUsuario()">Eliminar</ion-button>
 </ion-content>

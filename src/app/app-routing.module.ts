@@ -125,6 +125,14 @@ const routes: Routes = [
     path: 'apiupdate/:id',
     loadChildren: () => import('./pages/api/update/update.module').then( m => m.UpdatePageModule)
   },
+  {
+    path: 'usuarios',
+    loadChildren: () => import('./pages/usuarios/usuarios.module').then( m => m.UsuariosPageModule)
+  },
+  {
+    path: 'agregaru',
+    loadChildren: () => import('./pages/usuarios/agregaru/agregaru.module').then( m => m.AgregaruPageModule)
+  },
 ];
 
 @NgModule({

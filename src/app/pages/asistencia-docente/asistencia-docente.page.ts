@@ -16,8 +16,8 @@ export class AsistenciaDocentePage implements OnInit {
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
-    this.httpClient.get<any>("https://randomuser.me/api/?results=20").subscribe(resultado => {
-      this.usuarios = resultado.results;
+    this.httpClient.get<any>("http://localhost:3000").subscribe(resultado => {
+      this.usuarios = resultado.usuarios;
       console.log(this.usuarios)
     });
   }

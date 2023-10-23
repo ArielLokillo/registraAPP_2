@@ -15,5 +15,26 @@
   </ion-header>
 </ion-content>
 
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio-alumno"></ion-back-button>
+    </ion-buttons>
+    <ion-title>asistencia-alumno</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="refresh" (click)="listarAsistencias()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
-
+<ion-content>
+  <ion-list>
+    <ion-reorder-group [disabled]="false" (ionItemReorder)="handleReorder($any($event))">
+    <ion-item *ngFor="let aux of listaAsistenciasAlumno" [routerLink]="['/asistencia-alumno/', aux.id]">
+      <ion-label>{{ aux.nombre }}</ion-label>
+      <ion-reorder slot="end"></ion-reorder>
+    </ion-item>
+    </ion-reorder-group>
+  </ion-list>
+</ion-content>
+ -->

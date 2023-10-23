@@ -23,10 +23,10 @@ export class PerfilAlumnoPage implements OnInit {
     private loadingController: LoadingController) { }
 
   ngOnInit() {
-    //this.httpClient.get<any>("https://randomuser.me/api/?results=20").subscribe(resultado => {
-    //  this.usuarios = resultado.results;
-    //  console.log(this.usuarios)
-    //});
+    this.httpClient.get<any>("http://localhost:3000/usuarios").subscribe(resultado => {
+      this.usuarios = resultado.results;
+      console.log(this.usuarios)
+    });
     
   }
 

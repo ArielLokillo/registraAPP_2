@@ -12,10 +12,9 @@
   <ion-list *ngFor="let aux of usuarios" >
     <ion-item>
       <ion-card *ngIf="usuarios">
-        <img src="{{aux.picture.thumbnail}}" alt="">
+        <img src="" alt="">
         <ion-card-header>
-          <ion-card-title> {{aux.name.first}} </ion-card-title>
-          <ion-card-title> {{aux.name.last}} </ion-card-title>
+          <ion-card-title> {{aux.nombre}} </ion-card-title>
         </ion-card-header>
         <ion-card-content>
           <ion-chip>
@@ -27,6 +26,3 @@
   </ion-list>
 </ion-content>
 
-<!-- <ion-content>
-  <ion-button (click)="openCamera()">Abrir Cámara</ion-button>
-</ion-content> -->

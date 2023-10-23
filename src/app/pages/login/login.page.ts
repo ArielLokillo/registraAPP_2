@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UsuariosService } from 'src/app/services/api/usuarios.service';
 import { UsuariosrandomService } from 'src/app/services/api/usuariosrandom.service';
 
 @Component({
@@ -19,6 +20,7 @@ export class LoginPage implements OnInit {
   constructor(
     private router: Router,
     private usuariosrandom: UsuariosrandomService,
+    private usuarios: UsuariosService,
     private formBuilder: FormBuilder
   ) { 
     this.loginForm = this.formBuilder.group({
@@ -28,14 +30,7 @@ export class LoginPage implements OnInit {
   }
   
   ngOnInit() {
-    this.usuariosrandom.getRandomUser().subscribe(
-      (data) => {
-        console.log(data)
-        this.user = data.results[0] //RELLENAMOS EL USUARIO
-        this.emailValue = this.user.email
-        this.passValue = this.user.login.password
-     }
-    )
+    
   }
 
   login() {

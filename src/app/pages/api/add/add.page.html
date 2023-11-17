@@ -1,4 +1,7 @@
 <ion-header [translucent]="true">
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/apilist"></ion-back-button>
+  </ion-buttons>
   <ion-toolbar>
     <ion-title>add</ion-title>
   </ion-toolbar>
@@ -14,7 +17,7 @@
         <ion-input #nombre [(ngModel)]="usuario.nombre" type="text" label="Nombre" labelPlacement="floating"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input #genero [(ngModel)]="usuario.usuario" type="text" label="Genero" labelPlacement="floating"></ion-input>
+        <ion-input #correo [(ngModel)]="usuario.usuario" type="text" label="Correo" labelPlacement="floating"></ion-input>
       </ion-item>
       <ion-button color="primary" (click)="addUsuario()">Agregar</ion-button>
     </ion-card-content>

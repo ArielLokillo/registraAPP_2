@@ -8,16 +8,16 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
+  <ion-card *ngIf="usuario">
     <img alt="" src="" />
     <ion-card-header>
       <ion-card-title> {{ usuario.nombre }}</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
-      {{ usuario.correo }}
+      {{ usuario.usuario }}
     </ion-card-content>
   </ion-card>
-  <ion-button color="primary" fill="outline" [routerLink]="['/apiupdate', usuario.id]">Actualizar</ion-button>
+  <ion-button *ngIf="usuario" color="primary" fill="outline" [routerLink]="['/apiupdate', usuario.id]">Actualizar</ion-button>
   <ion-button color="danger" fill="outline" (click)="deleteUsuario()">Eliminar</ion-button>
 </ion-content>

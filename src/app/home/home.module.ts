@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { CardComponent } from '../components/card/card.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { CardComponent } from '../components/card/card.component';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    TranslateModule
   ],
   declarations: [HomePage,CardComponent]
 })

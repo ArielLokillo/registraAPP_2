@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'cl.duoc.registraapp',
+  appId: 'io.ionic.starter',
   appName: 'registraAPP',
   webDir: 'www',
   server: {

@@ -20,11 +20,6 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-                <action android:name="android.media.action.IMAGE_CAPTURE"/>
-                <action android:name="android.intent.action.PICK"/>
-                <action android:name="android.intent.action.GET_CONTENT"/>
-                <action android:name="com.android.camera.action.CROP"/>
-                <data android:scheme="content" android:mimeType="image/*"/>
             </intent-filter>
 
         </activity>
@@ -43,4 +38,7 @@
     <!-- Permissions -->
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 </manifest>

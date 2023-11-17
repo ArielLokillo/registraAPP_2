@@ -37,8 +37,8 @@
         La contraseña debe tener al menos 6 caracteres.
       </ion-text>
 
-      <ion-button [disabled]="!loginForm.valid" expand="block" fill="outline" color="warning" (click)="login()">Ingresar</ion-button> 
-      <ion-button expand="full" fill="clear" color="dark" (click)="register()">Registrarse</ion-button>
+      <ion-button (click)="login()" [disabled]="!loginForm.valid" expand="block" fill="outline" color="warning" >Ingresar</ion-button> 
+      <ion-button (click)="register()" expand="full" fill="clear" color="dark" >Registrarse</ion-button>
 
       <ion-card-title class="centrado">¿Ha olvidado su contraseña?</ion-card-title>
       <ion-button [routerLink]="['/recuperar-contrasena']" expand="full" fill="outline" color="secondary" shape="round">recuperar contraseña</ion-button>

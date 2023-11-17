@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,7 @@ import { MenuController } from '@ionic/angular';
 export class AppComponent {
   public appPages = [
     { title: 'Inicio', url: 'home', icon: 'home' },
-    { title: 'Perfil Alumno', url: 'perfil-alumno', icon: 'person' },
-    { title: 'Perfil Docente', url: 'perfil-docente', icon: 'person' },
+    { title: 'Perfil', url: 'perfil-docente', icon: 'person' },
     { title: 'Api', url: 'apihome', icon: 'home' },
     { title: 'Cerrar sesión', url: 'inicio', icon: 'log-out' },
   ];
@@ -29,8 +29,12 @@ export class AppComponent {
 
   constructor(
     private router: Router,
-    private menuController: MenuController
-    ) {}
+    private menuController: MenuController,
+    private transService: TranslateService
+    ) {
+      this.transService.setDefaultLang('fr');
+      this.transService.addLangs(['es','en']);
+    }
 
   mostrarMenu() {
     return this.router.url !== '/inicio-alumno'; //NO SE VA A MOSTRAR EN EL LOGIN
@@ -42,5 +46,6 @@ export class AppComponent {
     return aux.includes(this.router.url.substring(1)); // ELIMINAMOS EL "/"
     //return this.router.url == '/apihome';
   }
+
 
 }

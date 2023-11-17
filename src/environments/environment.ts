@@ -4,7 +4,16 @@
 
 export const environment = {
   production: false,
-  apiURL: "http://localhost:3000"
+  apiURL: "http://localhost:3000",
+  firebaseConfig : {
+  apiKey: "AIzaSyAngjL8wmqsllpXbPyteBtDsy_HzlG_2Z4",
+  authDomain: "registraapp-ddeb3.firebaseapp.com",
+  projectId: "registraapp-ddeb3",
+  storageBucket: "registraapp-ddeb3.appspot.com",
+  messagingSenderId: "259026990035",
+  appId: "1:259026990035:web:f108c2d6de33801afd7526",
+  measurementId: "G-ZF397FXG34"
+}
 };
 
 /*

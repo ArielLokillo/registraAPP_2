@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { IUsuario } from 'src/app/interfaces/iusuario';
 import { UsuariosService } from 'src/app/services/api/usuarios.service';
+import { FirestoreService } from 'src/app/services/firebase/firestore.service';
 
 @Component({
   selector: 'app-update',
@@ -10,29 +12,27 @@ import { UsuariosService } from 'src/app/services/api/usuarios.service';
 export class UpdatePage implements OnInit {
 
   //instancia que recibe la informacion
-  usuario = {
-    id:0,
-    nombre: 'TESTEO',
-    correo: 'TESTEOOO'
-  }
+  usuario!: IUsuario
 
   constructor(
     private apiService:UsuariosService,
-    private router: Router
+    private router: Router,
+    private firestore: FirestoreService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.getUsuario(this.getId())
+    //this.getUsuario(this.getId())
   }
 
   ionViewWillEnter() {
-    this.getUsuario(this.getId())
+    //this.getUsuario(this.getId())
   }
 
   getId() {
     let url = this.router.url
     let aux = url.split("/",3)
-    let id = parseInt(aux[2])
+    let id = aux[2]
     return id
   }
 
@@ -41,14 +41,19 @@ export class UpdatePage implements OnInit {
       this.usuario = {
         id: resp[0].id,
         nombre: resp[0].nombre,
-        correo: resp[0].genero
+        password: resp[0].password,
+        usuario: resp[0].usuario
       }
     })
   }
 
   updateUsuario() {
-    this.apiService.updateUsuario(this.usuario).subscribe();
-    this.router.navigate(['/apilist'])
+    //this.apiService.updateUsuario(this.usuario).subscribe();
+    const usuarioId = this.route.snapshot.paramMap.get('id');
+    if (usuarioId) {
+      this.firestore.updateDocument('usuarios', usuarioId ,this.usuario)
+      this.router.navigate(['/apilist'])
+    }
   }
 
 }

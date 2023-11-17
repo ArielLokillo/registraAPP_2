@@ -1,4 +1,4 @@
-package cl.duoc.registraapp;
+package io.ionic.starter;
 
 import com.getcapacitor.BridgeActivity;
 

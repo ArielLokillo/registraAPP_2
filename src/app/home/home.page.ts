@@ -34,4 +34,5 @@ export class HomePage {
   changeLangs(event:any) {
     this.transService.use(event.detail.value);
   }
+  
 }

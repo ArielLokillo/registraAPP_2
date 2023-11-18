@@ -133,6 +133,10 @@ const routes: Routes = [
     path: 'agregaru',
     loadChildren: () => import('./pages/usuarios/agregaru/agregaru.module').then( m => m.AgregaruPageModule)
   },
+  {
+    path: 'mapa',
+    loadChildren: () => import('./pages/mapa/mapa.module').then( m => m.MapaPageModule)
+  },
 ];
 
 @NgModule({

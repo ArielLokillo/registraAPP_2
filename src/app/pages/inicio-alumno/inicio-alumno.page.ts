@@ -22,14 +22,16 @@ export class InicioAlumnoPage implements OnInit {
   }
 
   ngOnInit() {
+    this.auth.logoutAll();
   }
 
-  logout() {
-    this.auth.logout();
+  logoutAlumno() {
+    this.auth.logoutAlumno();
     this.router.navigate(['inicio']);
   }
 
   changeLangs(event:any) {
     this.transService.use(event.detail.value);
   }
+  
 }

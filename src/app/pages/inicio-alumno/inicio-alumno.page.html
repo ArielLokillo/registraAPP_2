@@ -1,8 +1,5 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
     <ion-title>Inicio-Alumno</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -19,6 +16,7 @@
       
     </ion-card-content>
     <ion-button [routerLink]="['/asignaturas-alumno']" fill="outline" color="warning" shape="round">ver asignaturas </ion-button>
+    <ion-button [routerLink]="['/mapa']" fill="outline" color="warning" shape="round">Mapa </ion-button>
   </ion-card>
   <ion-button [routerLink]="['/inicio']" fill="outline" color="warning" shape="round">Cerrar Sesion </ion-button>
 </ion-content>

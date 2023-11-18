@@ -107,5 +107,6 @@ export class AsignaturasAlumnoService {
         return aux.id !== id
       })
     }
+
   }
 

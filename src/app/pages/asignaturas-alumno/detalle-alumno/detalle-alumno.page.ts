@@ -3,6 +3,7 @@ import { AsignaturasAlumno } from '../asignaturas-alumno.models';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
 import { AsignaturasAlumnoService } from 'src/app/services/asignaturas-alumno.service';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
 
 
@@ -14,6 +15,7 @@ import { AsignaturasAlumnoService } from 'src/app/services/asignaturas-alumno.se
 export class DetalleAlumnoPage implements OnInit {
 
   asignaturaAlumno!: AsignaturasAlumno;
+  imageSource:any;
 
   constructor(private router: Router,
               private toastController: ToastController,
@@ -41,6 +43,16 @@ export class DetalleAlumnoPage implements OnInit {
     toast.present()
   }
 
+  takePicture = async () => {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: false,
+      resultType: CameraResultType.DataUrl,
+      source:CameraSource.Prompt
+    });
+
+    this.imageSource=image.dataUrl;
+  }
   //async deleteAsignatura() {
     //this.mensajeToast("ASIGNATURA ELIMINADA!");
     //const alerta = await this.alertController.create({

@@ -50,9 +50,16 @@ export class LoginPage implements OnInit {
     });
   }
 
-  login() {
+  loginAlumno() {
     if(this.emailValue && this.passValue) {
-      this.authService.login(this.emailValue,this.passValue);
+      var log = this.authService.loginAlumno(this.emailValue,this.passValue);
+      log.then((res => {
+        this.mensajeToast("Bienvenido Usuario!")
+        this.router.navigate(['inicio-alumno'])
+      }))
+      log.catch((error)=> {
+        this.mensajeToast("Usuario no valido")
+      })
       //this.mensajeToast("Bienvenido Usuario!")
       //this.router.navigate(['inicio-alumno'])
     }
@@ -66,6 +73,19 @@ export class LoginPage implements OnInit {
       //this.router.navigate(['inicio-alumno'])
     }
   }
+
+  recuperarContrasena(){
+    if(this.emailValue && this.passValue) {
+      this.authService.recuperarContrasena(this.emailValue,this.passValue);
+      this.mensajeToast("Contraseña cambiada con exito!")
+    }
+  }
+
+  logoutAlumno() {
+    this.authService.logoutAlumno();
+    this.router.navigate(['inicio']);
+  }
+
 
   mensajeToast(mensaje: String){
     const Toast = Swal.mixin({

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController, LoadingController } from '@ionic/angular';
 import Swal from 'sweetalert2';
 
+
 @Component({
   selector: 'app-qr',
   templateUrl: './qr.page.html',
@@ -9,6 +10,8 @@ import Swal from 'sweetalert2';
 })
 
 export class QrPage implements OnInit {
+
+  text:any;
 
   constructor(
     private alertController: AlertController,

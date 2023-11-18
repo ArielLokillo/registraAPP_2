@@ -9,13 +9,19 @@
 
 <ion-content [fullscreen]="">
   <ion-card>
-    <img alt="Silhouette of mountains" src="../../../assets/icon/codigo_qr_duoc.PNG" />
+
+    <ion-text>
+      <input type="text" [(ngModel)]="text">
+      <br><br>
+      <qrcode [qrdata]="text" [width]="250" ></qrcode>
+    </ion-text>
+
     <ion-card-header>
-      <ion-card-subtitle>Código generado correctamente!</ion-card-subtitle>
     </ion-card-header>
     
     <ion-card-content>
       <ion-button (click)="mostrarAlerta()" fill="outline" color="warning" shape="round">Pasar Asistencia</ion-button>
     </ion-card-content>
   </ion-card>
+
 </ion-content>

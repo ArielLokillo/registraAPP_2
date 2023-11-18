@@ -21,6 +21,7 @@
       {{ asignaturaAlumno.horarioAlumno }}
     </ion-card-content>
     <ion-button [routerLink]="['/asistencia-alumno']"  fill="outline" color="warning" shape="round">ver asistencias</ion-button>
-    <ion-button fill="outline" color="warning" shape="round">Escanear código QR</ion-button>
+    <img src=" {{ imageSource }} " style="width: 400px;">
+    <ion-button (click)="takePicture()" fill="outline" color="warning" shape="round">Escanear código QR</ion-button>
   </ion-card>
 </ion-content>

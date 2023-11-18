@@ -33,6 +33,16 @@ export class AuthService {
     }
   }
 
+  async recuperarContrasena(email: string, pass: string){
+    try {
+      const user = await this.auth.sendPasswordResetEmail;
+      this.auth.confirmPasswordReset(email,pass)
+      console.log(user);
+    } catch (error) {
+      console.error('Error en recuperar contrasena: ', error);
+    }
+  }
+
   async logout() {
     try {
       await this.auth.signOut();
@@ -53,4 +63,34 @@ export class AuthService {
   }
 
 
+  async loginAlumno(email: string, pass: string) {
+    try {
+      const user = await this.auth.signInWithEmailAndPassword(email,pass);
+      if(user) {
+        this.router.navigate(['inicio-alumno']);
+        // bienvenidossssss
+      }
+      console.log(user);
+    } catch (error) {
+      console.error('Error en login: ', error);
+    }
+  }
+
+  async logoutAlumno() {
+    try {
+      await this.auth.signOut();
+      //this.router.navigate(['inicio']);
+    } catch (error) {
+      console.error('Error en logout: ', error)
+    }
+  }
+
+  async logoutAll(){
+    try {
+      await this.auth.signOut();
+      //this.router.navigate(['inicio']);
+    } catch (error) {
+      console.error('Error en logout: ', error)
+    }
+  }
 }

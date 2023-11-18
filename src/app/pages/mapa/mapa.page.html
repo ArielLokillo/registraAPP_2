@@ -1,0 +1,43 @@
+<ion-header  >
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio-alumno"></ion-back-button>
+    </ion-buttons>
+    <ion-title>mapa</ion-title>
+  </ion-toolbar>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
+
+  <link rel="stylesheet" type="text/scss" href="../mapa/mapa.page.scss">
+
+</ion-header>
+
+<ion-content >
+
+  <div id="map"></div>
+
+   <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+ crossorigin=""></script>
+
+ <script src="mapa.page.js"></script>
+</ion-content>
+
+<script>
+  var map = L.map('map', {
+    center: [51.505, -0.09],
+    zoom: 13
+});
+</script>
+
+
+
+<script>
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+</script>

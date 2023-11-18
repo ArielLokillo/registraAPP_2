@@ -36,7 +36,15 @@ export class LoginDocentePage implements OnInit {
   }
   
   ngOnInit() {
-
+    this.authService.checkAuth()
+    .then((user) => {
+      if(user){
+        this.router.navigate(['home']);
+      }
+    })
+    .catch((error) => {
+      console.log('Error en autenticacion: ', error);
+    });
   }
 
   login() {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  addAPI() {
+    this.router.navigate(['apiadd']);
+  }
+
+  updateAPI() {
+    this.router.navigate(['apiupdate/:id']);
+  }
+
+  deleteAPI() {
+    this.router.navigate(['apidelete/:id']);
+  }
 }

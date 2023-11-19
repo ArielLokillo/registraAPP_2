@@ -13,9 +13,9 @@ export class AddPage implements OnInit {
   //instancia creada para el test
   usuario: IUsuario = {
     id: 1,
-    usuario: 'arie.saavedra@duocuc.cl',
-    password: 'alumnoduoc1234',
-    nombre: 'Ariel'
+    usuario: '',
+    password: '',
+    nombre: ''
   }
 
   constructor(

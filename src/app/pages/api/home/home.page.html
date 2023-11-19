@@ -8,9 +8,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">home</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-card-header>
+  <ion-card-title>¿Qué accion desea realizar?</ion-card-title>
+</ion-card-header>
+
+<ion-button expand="block" fill="outline" color="warning" (click)="addAPI()">Agregar Usuarios</ion-button>
+<ion-button expand="block" fill="outline" color="warning" (click)="updateAPI()">Actualizar Usuarios</ion-button>
+<ion-button expand="block" fill="outline" color="warning" (click)="deleteAPI()">Eliminar Usuarios</ion-button>
 </ion-content>

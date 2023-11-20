@@ -5,10 +5,19 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label> {{"selecciona" | translate}} </ion-label>
+    <ion-select [(ngModel)]="idioma" (ionChange)="changeLangs($event)">
+      <ion-select-option value="en">English</ion-select-option>
+      <ion-select-option value="es">Español</ion-select-option>
+      <ion-select-option value="fr">Francais</ion-select-option>
+      <ion-select-option value="pt">Portugués</ion-select-option>
+    </ion-select>
+  </ion-item>
   <ion-card>
     <img alt="Silhouette of mountains" src="https://www.duoc.cl/wp-content/uploads/2020/06/Puente-alto.jpg" />
     <ion-card-header>
-      <ion-card-title> Bienvenido Alumno! </ion-card-title>
+      <ion-card-title> {{ "bienvenido" | translate }} </ion-card-title>
       <ion-card-subtitle>¿Qué desea ver?</ion-card-subtitle>
     </ion-card-header>
   
@@ -18,5 +27,5 @@
     <ion-button [routerLink]="['/asignaturas-alumno']" fill="outline" color="warning" shape="round">ver asignaturas </ion-button>
     <ion-button [routerLink]="['/mapa']" fill="outline" color="warning" shape="round">Mapa </ion-button>
   </ion-card>
-  <ion-button [routerLink]="['/inicio']" fill="outline" color="warning" shape="round">Cerrar Sesion </ion-button>
+  <ion-button [routerLink]="['/inicio']" fill="outline" color="warning" shape="round"> {{ "cerrarsesion" | translate }} </ion-button>
 </ion-content>

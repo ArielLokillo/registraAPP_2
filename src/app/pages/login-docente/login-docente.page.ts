@@ -49,7 +49,14 @@ export class LoginDocentePage implements OnInit {
 
   login() {
     if(this.emailValue && this.passValue) {
-      this.authService.login(this.emailValue,this.passValue);
+      var log = this.authService.login(this.emailValue,this.passValue);
+      log.then((res => {
+        this.mensajeToast("Bienvenido Usuario!")
+        this.router.navigate(['home'])
+      }))
+      log.catch((error)=> {
+        this.mensajeToast("Usuario no valido")
+      })
       //this.mensajeToast("Bienvenido Usuario!")
       //this.router.navigate(['inicio-alumno'])
     }

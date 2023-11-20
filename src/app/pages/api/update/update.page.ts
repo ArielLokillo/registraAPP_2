@@ -22,11 +22,11 @@ export class UpdatePage implements OnInit {
   ) { }
 
   ngOnInit() {
-    //this.getUsuario(this.getId())
+    console.log(this.getId)
   }
 
   ionViewWillEnter() {
-    //this.getUsuario(this.getId())
+  this.getUsuario(this.getId())
   }
 
   getId() {
@@ -36,7 +36,7 @@ export class UpdatePage implements OnInit {
     return id
   }
 
-  getUsuario(id: Number) {
+  getUsuario(id: any) {
     this.apiService.getUsuario(id).subscribe((resp:any) => {
       this.usuario = {
         id: resp[0].id,

@@ -29,7 +29,7 @@ export class AddPage implements OnInit {
   }
 
   listar() {
-    this.firestore.getCollection('jugadores').subscribe()
+    this.firestore.getCollection('usuarios').subscribe()
   }
 
   addUsuario() {

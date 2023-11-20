@@ -13,7 +13,6 @@ export class AppComponent {
     { title: 'Inicio', url: 'home', icon: 'home' },
     { title: 'Perfil', url: 'perfil-docente', icon: 'person' },
     { title: 'Api', url: 'apihome', icon: 'home' },
-    { title: 'Cerrar sesión', url: 'inicio', icon: 'log-out' },
   ];
 
   public appApi = [
@@ -23,7 +22,6 @@ export class AppComponent {
     { title: 'Delete', url: 'apidelete', icon: 'people' },
     { title: 'Detail', url: 'apidetail', icon: 'analytics' },
     { title: 'Update', url: 'apiupdate', icon: 'medal' },
-    { title: 'Cerrar Sesión', url: 'login', icon: 'log-out' },
   ]
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
@@ -32,8 +30,8 @@ export class AppComponent {
     private menuController: MenuController,
     private transService: TranslateService
     ) {
-      this.transService.setDefaultLang('fr');
-      this.transService.addLangs(['es','en']);
+      this.transService.setDefaultLang('pt');
+      this.transService.addLangs(['es','en','fr']);
     }
 
   mostrarMenu() {

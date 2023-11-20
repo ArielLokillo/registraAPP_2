@@ -30,8 +30,10 @@ export class InicioAlumnoPage implements OnInit {
     this.router.navigate(['inicio']);
   }
 
-  changeLangs(event:any) {
-    this.transService.use(event.detail.value);
+  changeLangs(event: any) {
+    const selectedLang = event.detail.value;
+    this.transService.use(selectedLang);
+    this.idioma = selectedLang;
   }
   
 }

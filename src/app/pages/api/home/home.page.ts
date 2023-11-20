@@ -25,4 +25,8 @@ export class HomePage implements OnInit {
   deleteAPI() {
     this.router.navigate(['apidelete/:id']);
   }
+
+  listAPI() {
+    this.router.navigate(['apilist']);
+  }
 }

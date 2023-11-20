@@ -32,7 +32,9 @@ export class HomePage {
   }
   
   changeLangs(event:any) {
-    this.transService.use(event.detail.value);
+    const selectedLang = event.detail.value;
+    this.transService.use(selectedLang);
+    this.idioma = selectedLang;
   }
   
 }

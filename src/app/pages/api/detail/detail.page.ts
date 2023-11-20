@@ -15,8 +15,8 @@ export class DetailPage implements OnInit {
 
   asignatura = {
     id:'',
-    nombre: 'hola',
-    seccion: 'holases'
+    nombre: '',
+    seccion: ''
   }
 
   constructor(

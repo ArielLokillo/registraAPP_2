@@ -8,12 +8,15 @@ import { InicioAlumnoPageRoutingModule } from './inicio-alumno-routing.module';
 
 import { InicioAlumnoPage } from './inicio-alumno.page';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InicioAlumnoPageRoutingModule
+    InicioAlumnoPageRoutingModule,
+    TranslateModule
   ],
   declarations: [InicioAlumnoPage]
 })

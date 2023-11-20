@@ -11,7 +11,10 @@
   <ion-item>
     <ion-label> {{"selecciona" | translate}} </ion-label>
     <ion-select [(ngModel)]="idioma" (ionChange)="changeLangs($event)">
-      <ion-select-option *ngFor="let lang of langs" > {{ lang }} </ion-select-option>
+      <ion-select-option value="en">English</ion-select-option>
+      <ion-select-option value="es">Español</ion-select-option>
+      <ion-select-option value="fr">Francais</ion-select-option>
+      <ion-select-option value="pt">Portugués</ion-select-option>
     </ion-select>
   </ion-item>
   <app-card [mostrarBoton]="true" [mostrarHeader]="true" nombre="Bienvenido Docente!"  siglas="¿Que desea ver?" seccion="">

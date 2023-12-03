@@ -8,17 +8,8 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-item>
-    <ion-label> {{"selecciona" | translate}} </ion-label>
-    <ion-select [(ngModel)]="idioma" (ionChange)="changeLangs($event)">
-      <ion-select-option value="en">English</ion-select-option>
-      <ion-select-option value="es">Español</ion-select-option>
-      <ion-select-option value="fr">Francais</ion-select-option>
-      <ion-select-option value="pt">Portugués</ion-select-option>
-    </ion-select>
-  </ion-item>
   <app-card [mostrarBoton]="true" [mostrarHeader]="true" nombre="Bienvenido Docente!"  siglas="¿Que desea ver?" seccion="">
-    <ion-button [routerLink]="['/asistencia-alumno']" fill="outline" color="warning" shape="round">ver asistencias </ion-button>
+    <ion-button [routerLink]="['/asistencia-alumno']" fill="outline" color="warning" shape="round"> {{ "ver asignaturas" | translate }} </ion-button>
     
   </app-card>
   <ion-button (click)="logout()" fill="outline" color="warning" shape="round"> {{ "cerrarsesion" | translate }} </ion-button>

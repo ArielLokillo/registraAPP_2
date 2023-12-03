@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../services/firebase/auth.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { FirestoreService } from '../services/firebase/firestore.service';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,8 @@ export class HomePage {
   constructor(
     private router: Router,
     private auth: AuthService,
-    private transService: TranslateService
+    private transService: TranslateService,
+    private firestore: FirestoreService
     ) {
       this.langs = this.transService.getLangs();
     }

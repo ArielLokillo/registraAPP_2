@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController, LoadingController, ToastController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 import { UsuariosrandomService } from 'src/app/services/api/usuariosrandom.service';
 import { AuthService } from 'src/app/services/firebase/auth.service';
 import Swal from 'sweetalert2';
@@ -20,6 +21,9 @@ export class LoginDocentePage implements OnInit {
   emailValue?: string //PARA CAPTURAR EL EMAIL DEL USUARIORANDOM
   passValue?: string //PARA CAPTURAR LA PASS DEL USUARIORANDOM
   
+  langs: string[] = [];
+  idioma!: string;
+
   constructor(
     private router: Router,
     private usuariosrandom: UsuariosrandomService,
@@ -27,12 +31,15 @@ export class LoginDocentePage implements OnInit {
     private authService: AuthService,
     private alertController: AlertController,
     private toastController: ToastController,
-    private loadingController: LoadingController
+    private loadingController: LoadingController,
+    private transService: TranslateService
   ) { 
     this.loginForm = this.formBuilder.group({
       email: ['',[Validators.required, Validators.email]],
       password:['',[Validators.required, Validators.minLength(6)]],
-    })
+    }),
+
+    this.langs = this.transService.getLangs();
   }
   
   ngOnInit() {
@@ -99,4 +106,9 @@ export class LoginDocentePage implements OnInit {
     })
   }
 
+  changeLangs(event: any) {
+    const selectedLang = event.detail.value;
+    this.transService.use(selectedLang);
+    this.idioma = selectedLang;
+  }
 }

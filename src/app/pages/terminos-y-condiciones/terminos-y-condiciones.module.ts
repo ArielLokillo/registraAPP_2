@@ -8,12 +8,15 @@ import { TerminosYCondicionesPageRoutingModule } from './terminos-y-condiciones-
 
 import { TerminosYCondicionesPage } from './terminos-y-condiciones.page';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TerminosYCondicionesPageRoutingModule
+    TerminosYCondicionesPageRoutingModule,
+    TranslateModule
   ],
   declarations: [TerminosYCondicionesPage]
 })

@@ -3,6 +3,7 @@ import { Asignatura } from '../asignaturas.models';
 import { AsignaturasService } from 'src/app/services/asignaturas.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-detalle',
@@ -13,11 +14,19 @@ export class DetallePage implements OnInit {
 
   asignatura! : Asignatura;
 
-  constructor(private router: Router,
-              private toastController: ToastController,
-              private alertController: AlertController,
-              private asignaturaService: AsignaturasService,
-              private activatedRoute: ActivatedRoute) { }
+  langs: string[] = [];
+  idioma!: string;
+
+  constructor(
+    private router: Router,
+    private toastController: ToastController,
+    private alertController: AlertController,
+    private asignaturaService: AsignaturasService,
+    private activatedRoute: ActivatedRoute,
+    private transService: TranslateService
+    ) { 
+      this.langs = this.transService.getLangs();
+    }
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(param => {
@@ -68,4 +77,10 @@ export class DetallePage implements OnInit {
     let resultado = await alerta.onDidDismiss();
   }
 
+  changeLangs(event:any) {
+    const selectedLang = event.detail.value;
+    this.transService.use(selectedLang);
+    this.idioma = selectedLang;
+  }
+  
 }

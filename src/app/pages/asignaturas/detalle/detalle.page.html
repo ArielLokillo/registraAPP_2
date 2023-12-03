@@ -23,8 +23,8 @@
     <ion-card-content>
       {{ asignatura.horario }}
     </ion-card-content>
-    <ion-button [routerLink]="['/asistencia-docente']"  fill="outline" color="warning" shape="round">ver asistencias</ion-button>
-    <ion-button [routerLink]="['/qr']" fill="outline" color="warning" shape="round">Generar código QR</ion-button>
+    <ion-button [routerLink]="['/asistencia-docente']"  fill="outline" color="warning" shape="round"> {{ "ver asistencias" | translate }} </ion-button>
+    <ion-button [routerLink]="['/qr']" fill="outline" color="warning" shape="round"> {{ "Generar código QR" | translate }} </ion-button>
   </ion-card>
 </ion-content>
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-inicio',
@@ -9,8 +10,16 @@ import { NavController } from '@ionic/angular';
 })
 export class InicioPage implements OnInit {
 
-  constructor(private router: Router,
-              private navCtrl: NavController) { }
+  langs: string[] = [];
+  idioma!: string;
+
+  constructor(
+    private router: Router,
+    private navCtrl: NavController,
+    private transService: TranslateService
+  ) { 
+    this.langs = this.transService.getLangs();
+  }
 
   ngOnInit() {
   }
@@ -25,5 +34,11 @@ export class InicioPage implements OnInit {
 
   navigateToTerms() {
     this.navCtrl.navigateForward('terminos-y-condiciones');
+  }
+
+  changeLangs(event: any) {
+    const selectedLang = event.detail.value;
+    this.transService.use(selectedLang);
+    this.idioma = selectedLang;
   }
 }

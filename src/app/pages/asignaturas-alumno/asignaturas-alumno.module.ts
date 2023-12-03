@@ -8,12 +8,15 @@ import { AsignaturasAlumnoPageRoutingModule } from './asignaturas-alumno-routing
 
 import { AsignaturasAlumnoPage } from './asignaturas-alumno.page';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AsignaturasAlumnoPageRoutingModule
+    AsignaturasAlumnoPageRoutingModule,
+    TranslateModule
   ],
   declarations: [AsignaturasAlumnoPage]
 })

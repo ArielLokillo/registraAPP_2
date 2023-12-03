@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController, LoadingController, ToastController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 import { UsuariosService } from 'src/app/services/api/usuarios.service';
 import { UsuariosrandomService } from 'src/app/services/api/usuariosrandom.service';
 import { AuthService } from 'src/app/services/firebase/auth.service';
+import { FirestoreService } from 'src/app/services/firebase/firestore.service';
 import Swal from 'sweetalert2';
+import { IUsuario } from 'src/app/interfaces/iusuario';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +24,11 @@ export class LoginPage implements OnInit {
   emailValue?: string //PARA CAPTURAR EL EMAIL DEL USUARIORANDOM
   passValue?: string //PARA CAPTURAR LA PASS DEL USUARIORANDOM
   
-  
+  langs: string[] = [];
+  idioma!: string;
+
+  usuario: any;
+
   constructor(
     private router: Router,
     private usuariosrandom: UsuariosrandomService,
@@ -30,12 +37,16 @@ export class LoginPage implements OnInit {
     private authService: AuthService,
     private toastController: ToastController,
     private alertController: AlertController,
-    private loadingController: LoadingController
+    private loadingController: LoadingController,
+    private transService: TranslateService,
+    private firestore: FirestoreService
   ) { 
     this.loginForm = this.formBuilder.group({
       email: ['',[Validators.required, Validators.email]],
       password:['',[Validators.required, Validators.minLength(6)]],
-    })
+    }),
+
+    this.langs = this.transService.getLangs();
   }
   
   ngOnInit() {
@@ -65,12 +76,26 @@ export class LoginPage implements OnInit {
     }
   }
 
-  register(){
-    //this.router.navigate(['register'])
-    if(this.emailValue && this.passValue) {
-      this.authService.register(this.emailValue,this.passValue);
-      this.mensajeToast("Usuario registrado correctamente!")
-      //this.router.navigate(['inicio-alumno'])
+  register() {
+    if (this.emailValue && this.passValue) {
+      // Crea un objeto de usuario con la información del formulario
+      const userData: IUsuario = {
+        id: 1, // o asigna un valor adecuado para la propiedad id
+        usuario: this.emailValue, // Asigna un valor adecuado para la propiedad usuario
+        password: this.passValue, //Asigna un valor adecuado para la propiedad password
+        nombre: '', // Asigna un valor adecuado para la propiedad nombre
+      };
+  
+      // Llama al servicio de Firestore para agregar el usuario
+      this.firestore.createDocument('usuarios', userData)
+        .then(() => {
+          this.mensajeToast('Usuario registrado correctamente!');
+          // Puedes redirigir al usuario a donde quieras después del registro
+        })
+        .catch((error) => {
+          console.error('Error al registrar usuario en Firestore:', error);
+          this.mensajeToast('Error al registrar usuario. Por favor, inténtalo de nuevo.');
+        });
     }
   }
 
@@ -114,4 +139,11 @@ export class LoginPage implements OnInit {
       heightAuto: false,
     })
   }
+
+  changeLangs(event: any) {
+    const selectedLang = event.detail.value;
+    this.transService.use(selectedLang);
+    this.idioma = selectedLang;
+  }
+
 }

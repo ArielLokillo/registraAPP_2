@@ -8,13 +8,16 @@ import { LoginDocentePageRoutingModule } from './login-docente-routing.module';
 
 import { LoginDocentePage } from './login-docente.page';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     LoginDocentePageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule
   ],
   declarations: [LoginDocentePage]
 })

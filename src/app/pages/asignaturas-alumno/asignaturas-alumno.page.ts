@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AsignaturasAlumno } from './asignaturas-alumno.models';
 import { Router } from '@angular/router';
 import { AsignaturasAlumnoService } from 'src/app/services/asignaturas-alumno.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-asignaturas-alumno',
@@ -13,8 +14,17 @@ export class AsignaturasAlumnoPage implements OnInit {
   listaAsignaturasAlumno: AsignaturasAlumno[] = [];
   buscador: AsignaturasAlumno[] = [];
 
-  constructor(private router: Router,
-              private asignaturasAlumnoService: AsignaturasAlumnoService) { }
+  langs: string [] = [];
+  idioma!: string;
+
+  constructor
+  (
+    private router: Router,
+    private asignaturasAlumnoService: AsignaturasAlumnoService,
+    private transService: TranslateService
+  ) {
+    this.langs = this.transService.getLangs();
+   }
 
   //METODO QUE SE EJECUTA CUANDO SE CREA LA PAGINA
   ngOnInit() {
@@ -56,4 +66,9 @@ export class AsignaturasAlumnoPage implements OnInit {
     }
   }
 
+  changeLangs(event: any) {
+    const selectedLang = event.detail.value;
+    this.transService.use(selectedLang);
+    this.idioma = selectedLang;
+  }
 }

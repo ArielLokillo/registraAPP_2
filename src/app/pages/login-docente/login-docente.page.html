@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/inicio"></ion-back-button>
     </ion-buttons>
-    <ion-title>Inicio de Sesión</ion-title>
+    <ion-title> {{ "Inicio de Sesión" | translate }} </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -21,11 +21,11 @@
       </ion-item>
 
       <ion-text position="stacked" color="danger" *ngIf="loginForm.get('email')?.hasError('required')">
-        El correo es requerido
+        {{ "El correo es requerido" | translate }}
       </ion-text>
 
       <ion-text position="stacked" color="danger" *ngIf="loginForm.get('email')?.hasError('email')">
-        El correo es inválido
+        {{ "El correo es inválido" | translate}}
       </ion-text>
 
       <ion-item>
@@ -33,18 +33,18 @@
       </ion-item>
 
       <ion-text position="stacked" color="danger" *ngIf="loginForm.get('password')?.hasError('required')">
-        La contraseña es requerida.
+        {{ "La contraseña es requerida" | translate }}
       </ion-text>
 
       <ion-text position="stacked" color="danger" *ngIf="loginForm.get('password')?.hasError('minlength')">
-        La contraseña debe tener al menos 6 caracteres.
+        {{ "La contraseña debe tener al menos 6 caracteres" | translate }}
       </ion-text>
 
-      <ion-button (click)="login()" [disabled]="!loginForm.valid" expand="block" fill="outline" color="warning" >Ingresar</ion-button> 
-      <ion-button (click)="register()" expand="full" fill="clear" color="dark" >Registrarse</ion-button>
+      <ion-button (click)="login()" [disabled]="!loginForm.valid" expand="block" fill="outline" color="warning" >{{ "Ingresar" | translate}}</ion-button> 
+      <ion-button (click)="register()" expand="full" fill="clear" color="dark" >{{ "Registrarse" | translate}}</ion-button>
 
-      <ion-card-title class="centrado">¿Ha olvidado su contraseña?</ion-card-title>
-      <ion-button [routerLink]="['/recuperar-contrasena']" expand="full" fill="outline" color="secondary" shape="round">recuperar contraseña</ion-button>
+      <ion-card-title class="centrado">{{ "¿Ha olvidado su contraseña?" | translate}}</ion-card-title>
+      <ion-button [routerLink]="['/recuperar-contrasena']" expand="full" fill="outline" color="secondary" shape="round">{{ "recuperar contraseña" | translate }}</ion-button>
       
     </ion-card-content>
   </ion-card>

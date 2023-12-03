@@ -1,5 +1,58 @@
 {
     "bienvenido" : "Bienvenido",
     "selecciona" : "Selecciona",
-    "cerrarsesion" : "Cerrar Sesion"
+    "cerrarsesion" : "Cerrar Sesion",
+
+    "tituloterminos" : "Términos y Condiciones de Uso de la Aplicación de Registro de Asistencias registraAPP",
+    "fechaterminos": "Fecha de entrada en vigencia: 00/00/0000.",
+    "terminosapp" : "Estos términos y condiciones ('Términos') rigen el uso de la aplicación de registro de  asistencias académicas ('RegistraAPP') proporcionada por Ariel Saavedra, Sebastián Henriquez, Gabriel Pitron.",
+    "titulotermino1" : "1. Registro y Cuentas de Usuario",
+    "termino1" : "Usted debe crear una cuenta para utilizar la Aplicación. La información de registro debe ser precisa y actualizada. Es su responsabilidad mantener la seguridad de su cuenta y contraseña. Usted es responsable de todas las actividades realizadas a través de su cuenta.",
+    "titulotermino2" : "2. Uso de la Aplicación",
+    "termino2" : "La Aplicación se proporciona para el registro de asistencias de DUOC UC y la gestión de eventos relacionados con la educación. Usted acepta utilizar la Aplicación de manera ética y legal. ",
+    "titulotermino3" : "3. Privacidad y Datos Personales",
+    "termino3" : "Respetamos su privacidad. Nuestra Política de Privacidad describe cómo recopilamos, utilizamos y protegemos sus datos personales. Al utilizar la Aplicación, usted acepta nuestras prácticas de privacidad.",
+    "titulotermino4" : "4. Propiedad Intelectual",
+    "termino4" : "Todos los derechos de propiedad intelectual relacionados con la Aplicación y su contenido son propiedad de Ariel Saavedra, Sebastián Henriquez, Gabriel Pitron o sus licenciantes.",
+    "titulotermino5": "5. Modificaciones de los Términos",
+    "termino5" : "Nos reservamos el derecho de modificar estos Términos en cualquier momento. Las modificaciones serán efectivas al publicar los Términos actualizados en la Aplicación.",
+    "titulotermino6" : "6. Finalización del Acceso",
+    "termino6" : "Podemos finalizar su acceso a la Aplicación si incumple estos Términos. Usted puede cancelar su cuenta en cualquier momento.",
+    "titulotermino7" : "7. Limitación de Responsabilidad",
+    "termino7" : "La Aplicación se proporciona 'tal cual' y 'según disponibilidad'. No ofrecemos garantías de ningún tipo. No seremos responsables de ningún daño directo, indirecto, incidental, especial o consecuente que resulte del uso o la imposibilidad de usar la Aplicación.",
+    "titulotermino8" : "8. Legislación Aplicable",
+    "termino8" : "Estos Términos se rigen por las leyes del País  y cualquier disputa se resolverá en los tribunales de Puente Alto. Al utilizar la Aplicación, usted acepta cumplir con estos Términos. Si tiene alguna pregunta o inquietud, no dude en ponerse en contacto con nosotros en [dirección de correo electrónico de soporte].",
+    "leytermino" : "Estos Términos se rigen por las leyes del País  y cualquier disputa se resolverá en los tribunales de Puente Alto. Al utilizar la Aplicación, usted acepta cumplir con estos Términos. Si tiene alguna pregunta o inquietud, no dude en  ponerse en contacto con nosotros en [dirección de correo electrónico de soporte].",
+    "finterminos" : "Estos Términos y Condiciones constituyen el acuerdo completo entre usted y Ariel Saavedra, Sebastián Henriquez, Gabriel Pitron con respecto al uso de la Aplicación.",
+    "fechafin" : "Fecha de última actualización: 00/00/0000",
+    "aceptoterminos" : "Acepto los terminos y condiciones",
+    "cerrarterminos" : "Cerrar",
+
+    "seleccionesesion" : "Seleccione su respectiva sesión",
+    "botonalumno" : "Alumno",
+    "botondocente" : "Docente",
+    "botonterminos" : "Términos y Condiciones",
+
+    "Inicio de Sesión" : "Inicio de Sesión",
+    "usuario" : "usuario",
+    "El correo es requerido" : "El correo es requerido",
+    "El correo es inválido" : "El correo es inválido",
+    "contraseña" : "contraseña",
+    "La contraseña es requerida" : "La contraseña es requerida.",
+    "La contraseña debe tener al menos 6 caracteres" : "La contraseña debe tener al menos 6 caracteres.",
+    "Ingresar" : "Ingresar",
+    "Registrarse" : "Registrarse",
+    "¿Ha olvidado su contraseña?" : "¿Ha olvidado su contraseña?",
+    "recuperar contraseña" : "recuperar contraseña",
+
+    "¿Qué desea ver?" : "¿Qué desea ver?",
+    "ver asignaturas" : "ver asignaturas",
+    "Mapa" : "Mapa",
+
+    "asignaturas alumno" : "asignaturas alumno",
+    "Generar código QR": "Generar código QR",
+    "Pasar Asistencia" : "Pasar Asistencia"
+
+
+    
 }

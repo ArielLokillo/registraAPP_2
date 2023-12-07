@@ -39,8 +39,6 @@ export class UpdatePage implements OnInit {
   getUsuario(id: any) {
     this.apiService.getUsuario(id).subscribe((resp:any) => {
       this.usuario = {
-        id: resp[0].id,
-        nombre: resp[0].nombre,
         password: resp[0].password,
         usuario: resp[0].usuario
       }

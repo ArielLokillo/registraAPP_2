@@ -80,10 +80,9 @@ export class LoginPage implements OnInit {
     if (this.emailValue && this.passValue) {
       // Crea un objeto de usuario con la información del formulario
       const userData: IUsuario = {
-        id: 1, // o asigna un valor adecuado para la propiedad id
         usuario: this.emailValue, // Asigna un valor adecuado para la propiedad usuario
-        password: this.passValue, //Asigna un valor adecuado para la propiedad password
-        nombre: '', // Asigna un valor adecuado para la propiedad nombre
+        password: this.passValue,
+        // otras propiedades según la interfaz...
       };
   
       // Llama al servicio de Firestore para agregar el usuario

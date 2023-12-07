@@ -14,10 +14,7 @@
     </ion-card-header>
     <ion-card-content>
       <ion-item>
-        <ion-input #nombre [(ngModel)]="usuario.nombre" type="text" label="Nombre" labelPlacement="floating"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input #correo [(ngModel)]="usuario.usuario" type="text" label="Correo" labelPlacement="floating"></ion-input>
+        <ion-input #nombre [(ngModel)]="usuario.usuario" type="text" label="Nombre" labelPlacement="floating"></ion-input>
       </ion-item>
       <ion-button expand="block" fill="outline" color="warning" (click)="addUsuario()">Agregar</ion-button>
     </ion-card-content>
